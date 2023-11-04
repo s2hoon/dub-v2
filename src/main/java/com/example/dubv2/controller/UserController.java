@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping("api")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -30,7 +30,7 @@ public class UserController {
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final JwtTokenProvider jwtTokenProvider;
 
-    @PostMapping("signup")
+    @PostMapping("/signup")
     public String join(@RequestBody UserDto userDto) {
         try {
             userService.signup(userDto);
